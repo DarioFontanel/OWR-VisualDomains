@@ -117,7 +117,7 @@ where
 If you are interested in training OWR models by loading the configurations you have just created, then run
 ```bash
 cd ~/OWR-VisualDomains
-python main.py --name {name} --{method} --dataset {dataset} --config {config}
+python main.py --name {name} --{method} --dataset {dataset} --config {config} --test {test} --{DG}
 ```
 
 where `{config}` needs to be `{name}_{dataset}_best_config.npy`.
@@ -127,7 +127,6 @@ If you are instead interested in training OWR models by loading the configuratio
 cd ~/OWR-VisualDomains
 python main.py --name {name} --{method} --dataset {dataset} --config default --test {test} --{DG}
 ```
-
 where
 * `test` allows to chose on which dataset(s) the model will be tested (default: `all` which uses all the three datasets)
 * `DG` allows to chose a Domain Generalization technique by using the following commands:
