@@ -41,6 +41,10 @@ def make_dataset(opts):
             transforms.RandomCrop(64, padding=8, padding_mode='edge'),
 
         ])
+        if not opts.search and opts.ss_weight:
+            transform_train = transforms.Compose([transform_train,
+                                                      transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5), ])
+                
         transform_train = transforms.Compose([transform_train,
             transforms.RandomHorizontalFlip(),
             transforms.ToTensor(),
@@ -84,6 +88,9 @@ def make_dataset(opts):
             transforms.RandomCrop(64, padding=8, padding_mode='edge'),
 
         ])
+        if not opts.search and opts.ss_weight:
+            transform_train = transforms.Compose([transform_train,
+                                                      transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5), ])
         transform_train = transforms.Compose([transform_train,
                                               transforms.RandomHorizontalFlip(),
                                               transforms.ToTensor(),
@@ -127,6 +134,11 @@ def make_dataset(opts):
             transforms.RandomCrop(64, padding=8, padding_mode='edge'),
 
         ])
+        
+        if not opts.search and opts.ss_weight:
+            transform_train = transforms.Compose([transform_train,
+                                                      transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5), ])
+        
         transform_train = transforms.Compose([transform_train,
                                               transforms.RandomHorizontalFlip(),
                                               transforms.ToTensor(),
